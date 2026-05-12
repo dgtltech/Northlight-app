@@ -20,9 +20,6 @@ xcuserdata/
 .swiftpm/
 Package.resolved
 
-# Generated Xcode project (regenerated from project.yml via xcodegen)
-Northlight.xcodeproj/
-
 # Build outputs
 *.app/
 *.dSYM/

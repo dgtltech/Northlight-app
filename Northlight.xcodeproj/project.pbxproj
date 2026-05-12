@@ -1,0 +1,436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		010A4A48610153C072467E4C /* ImageWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7905E44D1676ED7D09C6FF2E /* ImageWindowController.swift */; };
+		0206F59985BD0485B9F0FB37 /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9739C1D230F09BD57902D77C /* AboutWindowController.swift */; };
+		1A2B04B286B64E0537783CBF /* WelcomeGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A716F9864BDD1BF23E59F893 /* WelcomeGuideView.swift */; };
+		1C586F84EACD56009CB0ABB4 /* SendToFolders.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A991F83C835369211CBC11 /* SendToFolders.swift */; };
+		24E8DBE4375150BD7E829AA4 /* ZoomPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A13A3B087C256ECC5CAA71E /* ZoomPopoverViewController.swift */; };
+		41AB0B9BC4F18BE20CEC7B04 /* SendToMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82460DCADF0237EB8E69A6D9 /* SendToMenuDelegate.swift */; };
+		441A2B213AF2039086E4CA85 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656E3A433CC5831B84AD099A /* StatusBarView.swift */; };
+		4725765E73CF8E356B41B1CF /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708A9AA47403AC344BDE8F46 /* ImageScrollView.swift */; };
+		49216D3E4AFBD2967BDA9CD0 /* FileFormatRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6CD57E82C915AC69C8A826 /* FileFormatRegistry.swift */; };
+		5EE9FDF5284BB5E8F3FBD36A /* ZoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F5CE40B6E2E66FE315B08 /* ZoomController.swift */; };
+		67C6F8361CE3AF845D96F0A7 /* FileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B87A30F7D5B7F1B79EA19C7 /* FileInfo.swift */; };
+		682186C11EB176DD771BC007 /* NorthlightApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E7A249534BF915D7BE204 /* NorthlightApp.swift */; };
+		77EE1F71006AC53A49A6EFF7 /* SortPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E384C076C42E5FA764360 /* SortPreferences.swift */; };
+		841766FB91F70A4B83B30D31 /* BackgroundPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9A3E88F5FD6CEE6B1D3849 /* BackgroundPreferences.swift */; };
+		8841B57BBEB1BEC0C0B78128 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6279881331DFF2328AD31D /* AppDelegate.swift */; };
+		9CDD17554ADF5DD707A3B988 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EFC46102D1AB55B2A2FAE5 /* ImageLoader.swift */; };
+		9FABDB663D2315E41B536C4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D3720E1ECE180B927DBB73 /* Assets.xcassets */; };
+		AE71139428E4DEB7E421BEC3 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = C743BD94E59C626BFA0A17D8 /* PrivacyInfo.xcprivacy */; };
+		C254CD4D36B57B897DD1B099 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A4378CF244A4FE99458E32 /* PreferencesWindowController.swift */; };
+		D13CBFC50E1C913404DC7C12 /* AppIconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0023DD747D3F507E6D28E5 /* AppIconManager.swift */; };
+		D6B785AE33F33BA3104BCA29 /* FolderNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167459707D7326829EAC216D /* FolderNavigator.swift */; };
+		F11626B805E974B5F9D6E014 /* SupportedFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE4C1947B0A7045700D417A /* SupportedFormats.swift */; };
+		F4F754FCDB9B108993A1F906 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7160142FFF43F679F52F8C /* MainMenu.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		019E7A249534BF915D7BE204 /* NorthlightApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NorthlightApp.swift; sourceTree = "<group>"; };
+		167459707D7326829EAC216D /* FolderNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderNavigator.swift; sourceTree = "<group>"; };
+		1B87A30F7D5B7F1B79EA19C7 /* FileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileInfo.swift; sourceTree = "<group>"; };
+		34EFC46102D1AB55B2A2FAE5 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		4D0023DD747D3F507E6D28E5 /* AppIconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconManager.swift; sourceTree = "<group>"; };
+		656E3A433CC5831B84AD099A /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
+		708A9AA47403AC344BDE8F46 /* ImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
+		7905E44D1676ED7D09C6FF2E /* ImageWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWindowController.swift; sourceTree = "<group>"; };
+		7B7160142FFF43F679F52F8C /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		82460DCADF0237EB8E69A6D9 /* SendToMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendToMenuDelegate.swift; sourceTree = "<group>"; };
+		8A13A3B087C256ECC5CAA71E /* ZoomPopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomPopoverViewController.swift; sourceTree = "<group>"; };
+		8C6CD57E82C915AC69C8A826 /* FileFormatRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFormatRegistry.swift; sourceTree = "<group>"; };
+		91EF76D6661F7E8B0A7D8F2D /* Northlight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Northlight.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9739C1D230F09BD57902D77C /* AboutWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
+		9C6279881331DFF2328AD31D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A716F9864BDD1BF23E59F893 /* WelcomeGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeGuideView.swift; sourceTree = "<group>"; };
+		AA8F5CE40B6E2E66FE315B08 /* ZoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomController.swift; sourceTree = "<group>"; };
+		B1A991F83C835369211CBC11 /* SendToFolders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendToFolders.swift; sourceTree = "<group>"; };
+		C0A4378CF244A4FE99458E32 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
+		C743BD94E59C626BFA0A17D8 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		DC9A3E88F5FD6CEE6B1D3849 /* BackgroundPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundPreferences.swift; sourceTree = "<group>"; };
+		E3D3720E1ECE180B927DBB73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA8E384C076C42E5FA764360 /* SortPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortPreferences.swift; sourceTree = "<group>"; };
+		FEE4C1947B0A7045700D417A /* SupportedFormats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportedFormats.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0480F31EDE98CC9D24C42DBC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				91EF76D6661F7E8B0A7D8F2D /* Northlight.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1945E543E385BEBF61E4B79F = {
+			isa = PBXGroup;
+			children = (
+				3A7AD25B82B0F857394FE9A9 /* Northlight */,
+				0480F31EDE98CC9D24C42DBC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1C2F1DEBD5FB966C627A6969 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D0023DD747D3F507E6D28E5 /* AppIconManager.swift */,
+				DC9A3E88F5FD6CEE6B1D3849 /* BackgroundPreferences.swift */,
+				8C6CD57E82C915AC69C8A826 /* FileFormatRegistry.swift */,
+				1B87A30F7D5B7F1B79EA19C7 /* FileInfo.swift */,
+				167459707D7326829EAC216D /* FolderNavigator.swift */,
+				34EFC46102D1AB55B2A2FAE5 /* ImageLoader.swift */,
+				B1A991F83C835369211CBC11 /* SendToFolders.swift */,
+				FA8E384C076C42E5FA764360 /* SortPreferences.swift */,
+				FEE4C1947B0A7045700D417A /* SupportedFormats.swift */,
+				AA8F5CE40B6E2E66FE315B08 /* ZoomController.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		22B41EC1BE0B2924FE710A86 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9C6279881331DFF2328AD31D /* AppDelegate.swift */,
+				7B7160142FFF43F679F52F8C /* MainMenu.swift */,
+				019E7A249534BF915D7BE204 /* NorthlightApp.swift */,
+				82460DCADF0237EB8E69A6D9 /* SendToMenuDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3A7AD25B82B0F857394FE9A9 /* Northlight */ = {
+			isa = PBXGroup;
+			children = (
+				22B41EC1BE0B2924FE710A86 /* App */,
+				1C2F1DEBD5FB966C627A6969 /* Model */,
+				A2AED4216A3E0677A1DD9E0D /* Resources */,
+				885ABC4B71D3A7295C0EF2A1 /* Window */,
+			);
+			path = Northlight;
+			sourceTree = "<group>";
+		};
+		885ABC4B71D3A7295C0EF2A1 /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				9739C1D230F09BD57902D77C /* AboutWindowController.swift */,
+				708A9AA47403AC344BDE8F46 /* ImageScrollView.swift */,
+				7905E44D1676ED7D09C6FF2E /* ImageWindowController.swift */,
+				C0A4378CF244A4FE99458E32 /* PreferencesWindowController.swift */,
+				656E3A433CC5831B84AD099A /* StatusBarView.swift */,
+				A716F9864BDD1BF23E59F893 /* WelcomeGuideView.swift */,
+				8A13A3B087C256ECC5CAA71E /* ZoomPopoverViewController.swift */,
+			);
+			path = Window;
+			sourceTree = "<group>";
+		};
+		A2AED4216A3E0677A1DD9E0D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E3D3720E1ECE180B927DBB73 /* Assets.xcassets */,
+				C743BD94E59C626BFA0A17D8 /* PrivacyInfo.xcprivacy */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F998E6B551458911CC41AD42 /* Northlight */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E4DF9CA41BB75774835F594 /* Build configuration list for PBXNativeTarget "Northlight" */;
+			buildPhases = (
+				590E55B7D65CFC9EE631DFF2 /* Sources */,
+				A117A3B0A60F59E1CCA0B352 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Northlight;
+			packageProductDependencies = (
+			);
+			productName = Northlight;
+			productReference = 91EF76D6661F7E8B0A7D8F2D /* Northlight.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6230387CD14345F2BBB680A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					F998E6B551458911CC41AD42 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5B15A5248EED748E0F748FEC /* Build configuration list for PBXProject "Northlight" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 1945E543E385BEBF61E4B79F;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 0480F31EDE98CC9D24C42DBC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F998E6B551458911CC41AD42 /* Northlight */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A117A3B0A60F59E1CCA0B352 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FABDB663D2315E41B536C4C /* Assets.xcassets in Resources */,
+				AE71139428E4DEB7E421BEC3 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		590E55B7D65CFC9EE631DFF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0206F59985BD0485B9F0FB37 /* AboutWindowController.swift in Sources */,
+				8841B57BBEB1BEC0C0B78128 /* AppDelegate.swift in Sources */,
+				D13CBFC50E1C913404DC7C12 /* AppIconManager.swift in Sources */,
+				841766FB91F70A4B83B30D31 /* BackgroundPreferences.swift in Sources */,
+				49216D3E4AFBD2967BDA9CD0 /* FileFormatRegistry.swift in Sources */,
+				67C6F8361CE3AF845D96F0A7 /* FileInfo.swift in Sources */,
+				D6B785AE33F33BA3104BCA29 /* FolderNavigator.swift in Sources */,
+				9CDD17554ADF5DD707A3B988 /* ImageLoader.swift in Sources */,
+				4725765E73CF8E356B41B1CF /* ImageScrollView.swift in Sources */,
+				010A4A48610153C072467E4C /* ImageWindowController.swift in Sources */,
+				F4F754FCDB9B108993A1F906 /* MainMenu.swift in Sources */,
+				682186C11EB176DD771BC007 /* NorthlightApp.swift in Sources */,
+				C254CD4D36B57B897DD1B099 /* PreferencesWindowController.swift in Sources */,
+				1C586F84EACD56009CB0ABB4 /* SendToFolders.swift in Sources */,
+				41AB0B9BC4F18BE20CEC7B04 /* SendToMenuDelegate.swift in Sources */,
+				77EE1F71006AC53A49A6EFF7 /* SortPreferences.swift in Sources */,
+				441A2B213AF2039086E4CA85 /* StatusBarView.swift in Sources */,
+				F11626B805E974B5F9D6E014 /* SupportedFormats.swift in Sources */,
+				1A2B04B286B64E0537783CBF /* WelcomeGuideView.swift in Sources */,
+				5EE9FDF5284BB5E8F3FBD36A /* ZoomController.swift in Sources */,
+				24E8DBE4375150BD7E829AA4 /* ZoomPopoverViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		111AC472686426FCDCE0199B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		380BEC753FA9A3F727C72F90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Northlight/Northlight.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = 3ZB9PN9CF7;
+				INFOPLIST_FILE = Northlight/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Northlight;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = tech.dgtl.northlight;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6A00940C8D301BD527EAE576 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Northlight/Northlight.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = 3ZB9PN9CF7;
+				INFOPLIST_FILE = Northlight/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Northlight;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.photography";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.2;
+				PRODUCT_BUNDLE_IDENTIFIER = tech.dgtl.northlight;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E36C6ACA059D7E21675B9281 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5B15A5248EED748E0F748FEC /* Build configuration list for PBXProject "Northlight" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				111AC472686426FCDCE0199B /* Debug */,
+				E36C6ACA059D7E21675B9281 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8E4DF9CA41BB75774835F594 /* Build configuration list for PBXNativeTarget "Northlight" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A00940C8D301BD527EAE576 /* Debug */,
+				380BEC753FA9A3F727C72F90 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6230387CD14345F2BBB680A1 /* Project object */;
+}
