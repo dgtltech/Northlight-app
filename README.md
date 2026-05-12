@@ -1,10 +1,14 @@
 # Northlight
 
+> *An image viewer the way it used to feel. Open an image, scroll.*
+
 A fast, focused image viewer for macOS — built with AppKit, no SwiftUI.
 
-Northlight is inspired by Xee.app: open an image, get out of the way. No editing, no library management, no cloud sync. Just viewing, with keyboard-driven navigation, multi-window support, and proper handling of every format Apple's ImageIO understands (including animated GIF, WebP, AVIF, JPEG XL, and most camera RAW formats).
+**Free.** No account, no telemetry, no cloud. Files stay on your Mac.
 
-Distributed outside the Mac App Store with Developer ID signing and notarization.
+Northlight is inspired by Xee.app: open an image, get out of the way. No editing, no library management, no cloud sync. Just viewing, with mouse-wheel folder navigation, keyboard shortcuts, multi-window support, and proper handling of every format Apple's ImageIO understands (including animated GIF, WebP, AVIF, JPEG XL, and most camera RAW formats).
+
+Distributed outside the Mac App Store with Developer ID signing and notarization. Public site: <https://dgtltech.github.io/Northlight/>.
 
 ---
 
@@ -18,7 +22,7 @@ Distributed outside the Mac App Store with Developer ID signing and notarization
 - **Multiple windows** — `⌘N` for a new window, each with independent navigation and zoom state.
 - **Background color cycling** — six modes (theme default, theme opposite, pink, green, white, black). Click the color dot in the status bar to cycle, synced across all open windows via `NotificationCenter`.
 - **Send To submenu** in the right-click menu, configurable in Settings.
-- **Customizable app icon** — four presets (Default / Compass / Duck / Aurora) plus custom image upload.
+- **Customizable app icon** — four presets (Default / Compass / Duck / Aurora) plus custom image upload. Note: macOS only allows runtime icon changes for signed apps, so the custom icon is shown while Northlight is running and the system reverts to the default icon when the app is closed.
 - **Set as default app** for image formats — from Settings → Defaults, using `LSSetDefaultRoleHandlerForContentType` (the only path that avoids the macOS 15.4 Gatekeeper bug; see below).
 - **Fix Quarantine in Folder** — bulk-removes `com.apple.quarantine` xattr from image files in a selected folder, repairing files broken by the macOS bug.
 
@@ -94,10 +98,19 @@ Version and build number come from `MARKETING_VERSION` and `CURRENT_PROJECT_VERS
 - Hardened Runtime: enabled
 - App Sandbox: **disabled** (required so the in-app "Set as Default" buttons can call `LSSetDefaultRoleHandlerForContentType`; sandboxed apps cannot set themselves as system default handlers).
 - Notarization: required (Gatekeeper will block the app on first run otherwise).
-- After installing a new build on a test machine, reset the Launch Services database to pick up the new `Info.plist`:
+- After installing a new build on a test machine, register the bundle so Launch Services picks up the new `Info.plist`. **Prefer the targeted form** — it does not nuke the whole database:
   ```bash
   /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister \
-      -kill -r -domain local -domain system -domain user
+      -f /Applications/Northlight.app
+  ```
+  **Do NOT** run `lsregister -kill -r -domain ...` to "force a refresh" — it orphans PlugInKit / ShareKit references and hangs the Finder Share sheet. If you really need a full rebuild (rare), use the seeded form and flush the dependent caches:
+  ```bash
+  LSREGISTER=/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister
+  $LSREGISTER -kill
+  mkdir -p ~/.Trash/pluginkit_cache_$(date +%s)
+  mv ~/Library/Caches/com.apple.nsservicescache.plist ~/.Trash/pluginkit_cache_*/ 2>/dev/null
+  $LSREGISTER -seed -r -lint -domain local -domain system -domain user
+  killall pkd cfprefsd sharingd Finder
   ```
 
 ---
@@ -186,6 +199,10 @@ Apple Feedback IDs: FB19468486, FB19623735.
 - **Welcome Guide tip** at the bottom of the empty-state guide says the same thing.
 
 ---
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for release notes.
 
 ## About
 

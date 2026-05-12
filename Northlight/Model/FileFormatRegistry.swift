@@ -46,7 +46,7 @@ enum FileFormatRegistry {
         FormatHandler(title: "Hasselblad 3FR", extensions: ["3fr"], typeIdentifier: "com.hasselblad.3fr-raw-image"),
         FormatHandler(title: "Mamiya MEF", extensions: ["mef"], typeIdentifier: "com.mamiya.raw-image"),
         FormatHandler(title: "Phase One IIQ", extensions: ["iiq"], typeIdentifier: "com.phaseone.raw-image"),
-        FormatHandler(title: "Leica", extensions: ["dng"], typeIdentifier: "com.leica.raw-image"),
+        FormatHandler(title: "Leica RWL", extensions: ["rwl"], typeIdentifier: "com.leica.raw-image"),
         FormatHandler(title: "Kodak", extensions: ["kdc", "dcr"], typeIdentifier: "com.kodak.raw-image"),
         FormatHandler(title: "Minolta MRW", extensions: ["mrw"], typeIdentifier: "com.minolta.raw-image"),
         FormatHandler(title: "Epson ERF", extensions: ["erf"], typeIdentifier: "com.epson.raw-image")
