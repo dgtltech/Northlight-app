@@ -25,3 +25,6 @@ Package.resolved
 *.dSYM/
 *.dSYM.zip
 *.zip
+
+# Internal AI agent notes — kept local, not published
+CLAUDE.md
