@@ -4,6 +4,11 @@ All notable user-facing changes to Northlight are documented here. Format inspir
 
 ## [Unreleased]
 
+## [1.4] — 2026-05-30
+
+### Fixed
+- **Rotated photos opened in a wrongly-proportioned window and showed swapped dimensions.** Images carrying EXIF orientation metadata (most photos shot in portrait on a phone — e.g. HEIC from iPhone) were measured from their raw, unrotated pixel buffer. A portrait photo therefore opened in a landscape-shaped window with the image floating between empty side margins, zoom-to-fit was off, and the status bar reported the dimensions the wrong way around (e.g. `5712×4284` instead of `4284×5712`). Northlight now respects the orientation flag, so window shape, fit, zoom percentage, and the reported size all match what is actually displayed.
+
 ## [1.3] — 2026-05-12
 
 ### Fixed

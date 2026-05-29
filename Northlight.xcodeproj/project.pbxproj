@@ -311,7 +311,7 @@
 				CODE_SIGN_ENTITLEMENTS = Northlight/Northlight.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 3ZB9PN9CF7;
 				INFOPLIST_FILE = Northlight/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Northlight;
@@ -320,7 +320,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = tech.dgtl.northlight;
 				SDKROOT = macosx;
 			};
@@ -333,7 +333,7 @@
 				CODE_SIGN_ENTITLEMENTS = Northlight/Northlight.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 3ZB9PN9CF7;
 				INFOPLIST_FILE = Northlight/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Northlight;
@@ -342,7 +342,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = tech.dgtl.northlight;
 				SDKROOT = macosx;
 			};
