@@ -47,11 +47,23 @@ enum ImageLoader {
                 throw ImageLoadError.cannotReadDimensions
             }
 
+            // kCGImagePropertyPixelWidth/Height report the raw decoded buffer and ignore
+            // EXIF orientation, but NSImage(data:) bakes orientation into the bitmap rep.
+            // For orientations 5–8 (90°/270° rotations) display width and height are swapped,
+            // so swap them here to keep pixelSize aligned with what gets rendered. Otherwise
+            // fit-to-window math, the status bar, and the size override below all use the
+            // wrong (landscape) dimensions for portrait photos and vice versa.
+            let orientation = (props?[kCGImagePropertyOrientation] as? NSNumber)?.intValue ?? 1
+            let swapsDimensions = (5...8).contains(orientation)
+            let displaySize = swapsDimensions
+                ? CGSize(width: heightValue, height: widthValue)
+                : CGSize(width: widthValue, height: heightValue)
+
             let formatUTI = CGImageSourceGetType(source) as String?
 
             return LoadedImage(
                 data: data,
-                pixelSize: CGSize(width: widthValue, height: heightValue),
+                pixelSize: displaySize,
                 frameCount: count,
                 formatUTI: formatUTI
             )
