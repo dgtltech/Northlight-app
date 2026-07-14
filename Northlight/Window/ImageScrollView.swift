@@ -132,6 +132,14 @@ final class ImageScrollView: NSScrollView {
         applyFit()
     }
 
+    // Swaps in a re-rendered raster of the same logical size (SVG zoom
+    // re-sharpening). Frame, magnification, scroll position and fit mode are
+    // untouched; the caller guarantees image.size equals the current one.
+    func updateImagePreservingLayout(_ image: NSImage) {
+        guard imageView.image != nil else { return }
+        imageView.image = image
+    }
+
     func fitToWindow() {
         isFitMode = true
         applyFit()

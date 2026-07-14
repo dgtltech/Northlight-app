@@ -25,6 +25,7 @@ enum FileFormatName {
         case "heic", "heif", "heics": return "HEIC"
         case "avif", "avifs": return "AVIF"
         case "jxl": return "JPEG XL"
+        case "svg", "svgz": return "SVG"
         case "png": return "PNG"
         case "webp": return "WebP"
         case "gif": return "GIF"

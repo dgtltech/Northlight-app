@@ -12,6 +12,7 @@
 		1A2B04B286B64E0537783CBF /* WelcomeGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A716F9864BDD1BF23E59F893 /* WelcomeGuideView.swift */; };
 		1C586F84EACD56009CB0ABB4 /* SendToFolders.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A991F83C835369211CBC11 /* SendToFolders.swift */; };
 		24E8DBE4375150BD7E829AA4 /* ZoomPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A13A3B087C256ECC5CAA71E /* ZoomPopoverViewController.swift */; };
+		3E7F2C94D1A85B60C4F9E812 /* SVGWebRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A3D8E1C09B4F27A15E6B3D /* SVGWebRenderer.swift */; };
 		41AB0B9BC4F18BE20CEC7B04 /* SendToMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82460DCADF0237EB8E69A6D9 /* SendToMenuDelegate.swift */; };
 		441A2B213AF2039086E4CA85 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656E3A433CC5831B84AD099A /* StatusBarView.swift */; };
 		4725765E73CF8E356B41B1CF /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708A9AA47403AC344BDE8F46 /* ImageScrollView.swift */; };
@@ -38,6 +39,7 @@
 		1B87A30F7D5B7F1B79EA19C7 /* FileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileInfo.swift; sourceTree = "<group>"; };
 		34EFC46102D1AB55B2A2FAE5 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		4D0023DD747D3F507E6D28E5 /* AppIconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconManager.swift; sourceTree = "<group>"; };
+		56A3D8E1C09B4F27A15E6B3D /* SVGWebRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGWebRenderer.swift; sourceTree = "<group>"; };
 		656E3A433CC5831B84AD099A /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
 		708A9AA47403AC344BDE8F46 /* ImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
 		7905E44D1676ED7D09C6FF2E /* ImageWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageWindowController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				B1A991F83C835369211CBC11 /* SendToFolders.swift */,
 				FA8E384C076C42E5FA764360 /* SortPreferences.swift */,
 				FEE4C1947B0A7045700D417A /* SupportedFormats.swift */,
+				56A3D8E1C09B4F27A15E6B3D /* SVGWebRenderer.swift */,
 				AA8F5CE40B6E2E66FE315B08 /* ZoomController.swift */,
 			);
 			path = Model;
@@ -227,6 +230,7 @@
 				77EE1F71006AC53A49A6EFF7 /* SortPreferences.swift in Sources */,
 				441A2B213AF2039086E4CA85 /* StatusBarView.swift in Sources */,
 				F11626B805E974B5F9D6E014 /* SupportedFormats.swift in Sources */,
+				3E7F2C94D1A85B60C4F9E812 /* SVGWebRenderer.swift in Sources */,
 				1A2B04B286B64E0537783CBF /* WelcomeGuideView.swift in Sources */,
 				5EE9FDF5284BB5E8F3FBD36A /* ZoomController.swift in Sources */,
 				24E8DBE4375150BD7E829AA4 /* ZoomPopoverViewController.swift in Sources */,
@@ -311,7 +315,7 @@
 				CODE_SIGN_ENTITLEMENTS = Northlight/Northlight.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 3ZB9PN9CF7;
 				INFOPLIST_FILE = Northlight/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Northlight;
@@ -320,7 +324,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = tech.dgtl.northlight;
 				SDKROOT = macosx;
 			};
@@ -333,7 +337,7 @@
 				CODE_SIGN_ENTITLEMENTS = Northlight/Northlight.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 3ZB9PN9CF7;
 				INFOPLIST_FILE = Northlight/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Northlight;
@@ -342,7 +346,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = tech.dgtl.northlight;
 				SDKROOT = macosx;
 			};

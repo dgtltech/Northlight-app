@@ -64,6 +64,8 @@ final class ImageWindowController: NSWindowController, NSWindowDelegate, NSMenuI
     private var currentLoadedImage: LoadedImage?
     private var currentFileInfo: FileInfo?
     private var magnificationObservation: NSKeyValueObservation?
+    private var svgRenderContext: (url: URL, logicalSize: CGSize, lastPointWidth: CGFloat)?
+    private var svgRerenderTask: Task<Void, Never>?
 
     convenience init() {
         let window = NSWindow(
@@ -177,6 +179,7 @@ final class ImageWindowController: NSWindowController, NSWindowDelegate, NSMenuI
         magnificationObservation = scrollView.observe(\.magnification, options: [.new]) { [weak self] _, _ in
             DispatchQueue.main.async {
                 self?.refreshStatusBar()
+                self?.scheduleSVGRerender()
             }
         }
     }
@@ -275,6 +278,9 @@ final class ImageWindowController: NSWindowController, NSWindowDelegate, NSMenuI
     }
 
     func open(url: URL) {
+        if url.pathExtension.lowercased() == "svg" {
+            SVGWebRenderer.shared.warmUp()
+        }
         let folder = url.deletingLastPathComponent()
         let folderUnchanged = folderNavigator?.folder == folder
 
@@ -285,6 +291,8 @@ final class ImageWindowController: NSWindowController, NSWindowDelegate, NSMenuI
         currentURL = url
         currentLoadedImage = nil
         currentFileInfo = nil
+        svgRerenderTask?.cancel()
+        svgRenderContext = nil
         zoomController.resetForNewImage()
         refreshStatusBar()
         loadImage(url: url)
@@ -319,11 +327,43 @@ final class ImageWindowController: NSWindowController, NSWindowDelegate, NSMenuI
                 guard let self else { return }
                 guard self.currentURL == url else { return }
 
-                let nsImage = NSImage(data: loaded.data)
-                if let nsImage {
-                    nsImage.size = loaded.pixelSize
-                    for rep in nsImage.representations {
-                        rep.size = loaded.pixelSize
+                var nsImage: NSImage?
+                if loaded.rendersViaWebKit {
+                    // Base snapshot only covers the fit-to-window display size;
+                    // zooming in upgrades it via scheduleSVGRerender.
+                    let container = self.scrollView.bounds.size
+                    var fitMagnification: CGFloat = 1.0
+                    if container.width > 0, container.height > 0 {
+                        let raw = min(container.width / loaded.pixelSize.width,
+                                      container.height / loaded.pixelSize.height)
+                        fitMagnification = max(ZoomController.minFactor,
+                                               min(ZoomController.maxFactor, raw))
+                    }
+                    let baseWidth = SVGWebRenderer.cappedPointWidth(
+                        desired: loaded.pixelSize.width * fitMagnification,
+                        logicalSize: loaded.pixelSize,
+                        backingScale: self.window?.backingScaleFactor ?? 2.0
+                    )
+                    nsImage = try? await SVGWebRenderer.shared.render(
+                        fileURL: url,
+                        logicalSize: loaded.pixelSize,
+                        pointWidth: baseWidth
+                    )
+                    try Task.checkCancellation()
+                    guard self.currentURL == url else { return }
+                    if nsImage != nil {
+                        self.svgRenderContext = (url, loaded.pixelSize, baseWidth)
+                    }
+                }
+                if nsImage == nil {
+                    // Regular formats — and the CoreSVG fallback when the
+                    // WebKit render fails or times out.
+                    nsImage = NSImage(data: loaded.data)
+                    if let nsImage {
+                        nsImage.size = loaded.pixelSize
+                        for rep in nsImage.representations {
+                            rep.size = loaded.pixelSize
+                        }
                     }
                 }
                 self.currentLoadedImage = loaded
@@ -369,6 +409,41 @@ final class ImageWindowController: NSWindowController, NSWindowDelegate, NSMenuI
         progressIndicator.isHidden = true
     }
 
+    // WebKit-rendered SVGs are raster snapshots: after the magnification
+    // settles, re-render at the effective scale so the image stays sharp.
+    private func scheduleSVGRerender() {
+        guard let context = svgRenderContext else { return }
+        svgRerenderTask?.cancel()
+        svgRerenderTask = Task { [weak self] in
+            try? await Task.sleep(nanoseconds: 250_000_000)
+            guard !Task.isCancelled, let self else { return }
+            guard let current = self.svgRenderContext, current.url == context.url,
+                  self.currentURL == current.url else { return }
+
+            let magnification = self.scrollView.magnification
+            let targetWidth = SVGWebRenderer.cappedPointWidth(
+                desired: current.logicalSize.width * magnification,
+                logicalSize: current.logicalSize,
+                backingScale: self.window?.backingScaleFactor ?? 2.0
+            )
+            // Upgrade only: an existing larger raster downscales crisply, so
+            // zooming back out never triggers a wasteful re-render.
+            guard targetWidth > current.lastPointWidth + 1 else { return }
+
+            guard let image = try? await SVGWebRenderer.shared.render(
+                fileURL: current.url,
+                logicalSize: current.logicalSize,
+                pointWidth: targetWidth
+            ) else { return }
+
+            guard !Task.isCancelled,
+                  let latest = self.svgRenderContext, latest.url == current.url,
+                  self.currentURL == current.url else { return }
+            self.svgRenderContext = (current.url, current.logicalSize, targetWidth)
+            self.scrollView.updateImagePreservingLayout(image)
+        }
+    }
+
     private func scanFolder(forFile fileURL: URL) {
         scanTask?.cancel()
         let targetFolder = fileURL.deletingLastPathComponent()
@@ -389,6 +464,9 @@ final class ImageWindowController: NSWindowController, NSWindowDelegate, NSMenuI
                 sortOrder: order,
                 isReversed: reversed
             )
+            if entries.contains(where: { $0.url.pathExtension.lowercased() == "svg" }) {
+                SVGWebRenderer.shared.warmUp()
+            }
             self.refreshStatusBar()
         }
     }
@@ -484,6 +562,8 @@ final class ImageWindowController: NSWindowController, NSWindowDelegate, NSMenuI
             currentLoadedImage = nil
             currentFileInfo = nil
             folderNavigator = nil
+            svgRerenderTask?.cancel()
+            svgRenderContext = nil
             scrollView.setImage(nil, pixelSize: .zero)
             refreshStatusBar()
         }
@@ -550,6 +630,8 @@ final class ImageWindowController: NSWindowController, NSWindowDelegate, NSMenuI
             currentLoadedImage = nil
             currentFileInfo = nil
             folderNavigator = nil
+            svgRerenderTask?.cancel()
+            svgRenderContext = nil
             scrollView.setImage(nil, pixelSize: .zero)
             refreshStatusBar()
         }

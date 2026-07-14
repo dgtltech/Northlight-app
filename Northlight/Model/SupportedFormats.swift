@@ -13,6 +13,7 @@ enum SupportedFormats {
         "webp",
         "avif", "avifs",
         "jxl",
+        "svg", "svgz",
         "psd",
         "cr2", "cr3", "crw",
         "nef", "nrw",

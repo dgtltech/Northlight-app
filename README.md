@@ -38,11 +38,11 @@ Distributed outside the Mac App Store with Developer ID signing and notarization
 
 ## Supported Formats
 
-JPEG (`.jpg .jpeg .jpe .jfif`), PNG, GIF (animated), TIFF, BMP, ICO, ICNS, HEIC / HEIF, WebP, AVIF, JPEG XL (`.jxl`), Photoshop (`.psd`).
+JPEG (`.jpg .jpeg .jpe .jfif`), PNG, GIF (animated), TIFF, BMP, ICO, ICNS, HEIC / HEIF, WebP, AVIF, JPEG XL (`.jxl`), SVG (`.svg .svgz`), Photoshop (`.psd`).
 
 Camera RAW: Canon (CR2 / CR3 / CRW), Nikon (NEF / NRW), Sony (ARW / SRF / SR2), Adobe DNG, Fujifilm RAF, Panasonic RW2, Olympus ORF, Pentax PEF / PTX, Sigma X3F, Hasselblad 3FR, Mamiya MEF / MOS, Phase One IIQ, Leica RWL, Kodak KDC / DCR, Minolta MRW, Epson ERF, generic RAW.
 
-Loading goes through `ImageIO` via `CGImageSourceCreateWithData`, so anything Apple's framework can decode will load. The list above is the set with explicit `LSItemContentTypes` declarations in `Info.plist`.
+Loading goes through `ImageIO` via `CGImageSourceCreateWithData`, so anything Apple's framework can decode will load. The exception is SVG, which ImageIO cannot decode. Simple SVGs render through `NSImage` (CoreSVG) as true vectors, staying sharp at any zoom level and preserving transparency. SVGs that use features CoreSVG cannot draw — embedded or external images, filters, stylesheets, scripts — automatically render through WebKit with browser-grade fidelity; the view re-sharpens shortly after each zoom change. The list above is the set with explicit `LSItemContentTypes` declarations in `Info.plist`.
 
 ---
 

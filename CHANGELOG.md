@@ -4,6 +4,11 @@ All notable user-facing changes to Northlight are documented here. Format inspir
 
 ## [Unreleased]
 
+## [1.5] — 2026-07-14
+
+### Added
+- **SVG support (`.svg`, `.svgz`).** Simple SVGs render as true vectors via CoreSVG — sharp at any zoom level, with transparency preserved. SVGs using features CoreSVG cannot draw (embedded/external images, filters, stylesheets, scripts) automatically render through WebKit with browser-grade fidelity; those are rasterized on a white page background (as in a browser) and re-sharpen shortly after zooming. Covers folder navigation, drag & drop, the status bar, Settings → Defaults, and the "Fix Quarantine in Folder…" button. Animations render as a static frame.
+
 ## [1.4] — 2026-05-30
 
 ### Fixed

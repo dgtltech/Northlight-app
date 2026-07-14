@@ -29,6 +29,7 @@ enum FileFormatRegistry {
         FormatHandler(title: "WebP", extensions: ["webp"], typeIdentifier: "org.webmproject.webp"),
         FormatHandler(title: "AVIF", extensions: ["avif"], typeIdentifier: "public.avif"),
         FormatHandler(title: "JPEG XL", extensions: ["jxl"], typeIdentifier: "public.jpeg-xl"),
+        FormatHandler(title: "SVG", extensions: ["svg", "svgz"], typeIdentifier: "public.svg-image"),
         FormatHandler(title: "PSD", extensions: ["psd"], typeIdentifier: "com.adobe.photoshop-image"),
         FormatHandler(title: "RAW (generic)", extensions: ["raw"], typeIdentifier: "public.camera-raw-image"),
         FormatHandler(title: "Canon CR2", extensions: ["cr2"], typeIdentifier: "com.canon.cr2-raw-image"),
